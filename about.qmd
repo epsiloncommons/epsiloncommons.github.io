@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+Epsilon Commons is an open, student-led mathematics community.
+
+This community is independent and not affiliated with Nicolas Bourbaki.
