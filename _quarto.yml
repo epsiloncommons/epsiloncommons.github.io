@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Epsilon Commons"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog/index.qmd
+        text: Blog
+      - href: wiki/index.qmd
+        text: Wiki
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: cosmo
