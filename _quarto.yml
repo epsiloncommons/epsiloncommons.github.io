@@ -1,9 +1,19 @@
 project:
   type: website
+  resources:
+    - assets/fonts/*
+    - assets/home.js
+    - assets/stars.svg
 
 website:
   title: "Epsilon Commons"
+  favicon: assets/logo.svg
   navbar:
+    pinned: true
+    logo: assets/logo.svg
+    logo-alt: "Epsilon Commons"
+    background: "#050914"
+    foreground: "#F2F4FF"
     left:
       - href: index.qmd
         text: Home
@@ -16,4 +26,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - assets/theme.scss
+    css: assets/site.css

@@ -1,0 +1,20 @@
+/* Site-wide: self-hosted fonts, navbar wordmark and colours (D17). */
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("fonts/inter-latin-wght-normal.woff2") format("woff2"); }
+
+.navbar {
+  --bs-navbar-active-color: #65C9FF;
+  --bs-navbar-hover-color: #F2F4FF;
+}
+.navbar .navbar-title { text-transform: lowercase; letter-spacing: 0.01em; }
+.navbar .nav-link.active { color: #65C9FF; }
+.navbar .nav-link:hover, .navbar .nav-link:focus-visible { color: #F2F4FF; }
+
+/* Keep the wordmark whole on narrow phones. */
+.navbar .navbar-brand-container { max-width: none; }
+.navbar .navbar-title { overflow: visible; text-overflow: clip; white-space: nowrap; }
+@media (max-width: 30rem) { .navbar .navbar-title { font-size: .98rem; letter-spacing: 0; } }
