@@ -4,6 +4,7 @@ project:
     - assets/fonts/*
     - assets/home.js
     - assets/stars.svg
+    - assets/paper.svg
 
 website:
   title: "Epsilon Commons"

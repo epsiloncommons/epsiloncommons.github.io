@@ -68,7 +68,12 @@ body.scrolled:has(.page) #quarto-header .navbar { background-color: rgba(5, 9, 2
 @media (min-width: 62rem) { .hero .wrap { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); } }
 .surface-box { position: relative; width: min(100%, 38rem); aspect-ratio: 1; justify-self: center; }
 .surface-box canvas, .surface-box .surface-fallback { position: absolute; inset: 0; width: 100%; height: 100%; }
-canvas#surface { display: none; }
+canvas#surface { display: none; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+canvas#surface.dragging { cursor: grabbing; }
+canvas#surface:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.drag-hint { position: absolute; left: 50%; bottom: 1%; transform: translateX(-50%); font-size: .85rem; color: var(--muted); pointer-events: none; opacity: 0; transition: opacity .6s; }
+.surface-ok .drag-hint { opacity: .85; }
+.surface-ok .drag-hint.gone { opacity: 0; }
 .surface-ok canvas#surface { display: block; }
 .surface-ok .surface-fallback { display: none; }
 .note { position: absolute; font-family: var(--serif); font-style: italic; font-size: clamp(.95rem, 1.5vw, 1.2rem); color: var(--indigo); opacity: .8; pointer-events: none; white-space: nowrap; }
@@ -115,7 +120,7 @@ html:not(.js) .eps-step { position: static; opacity: 1; transform: none; margin-
 .about .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; }
 @media (min-width: 62rem) { .about .wrap { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 5rem; align-items: start; } }
 .principles { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.principles li { padding: 1.6rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1.2rem; align-items: baseline; }
+.principles li { padding: 1.6rem 0; position: relative; display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1.2rem; align-items: baseline; }
 @media (max-width: 40rem) { .principles li { grid-template-columns: 1fr; gap: .4rem; } }
 .principles h3 { color: var(--text); }
 .principles li:nth-child(1) h3 { color: var(--cyan); }
@@ -146,7 +151,7 @@ html:not(.js) .eps-step { position: static; opacity: 1; transform: none; margin-
 .areas { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem); }
 .area-list { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--line); }
 @media (min-width: 48rem) { .area-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; } }
-.area-list li { padding: 1.3rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.9rem); color: var(--text); transition: color .2s, padding-left .2s; }
+.area-list li { padding: 1.3rem 0; position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.9rem); color: var(--text); transition: color .2s, padding-left .2s; }
 .area-list li:hover { color: var(--cyan); padding-left: .5rem; }
 .area-list li span { font-family: var(--sans); font-size: .85rem; color: var(--muted); text-align: right; }
 
@@ -154,15 +159,16 @@ html:not(.js) .eps-step { position: static; opacity: 1; transform: none; margin-
 .join { padding: clamp(3rem, 6vw, 5rem) 0 clamp(5rem, 10vw, 8rem); }
 .flow-steps { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; counter-reset: s; }
 @media (min-width: 48rem) { .flow-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; } }
-.flow-steps li { counter-increment: s; position: relative; padding: 1.6rem 1.6rem 1.6rem 0; border-top: 1px solid var(--line); }
+.flow-steps li { counter-increment: s; position: relative; padding: 1.6rem 1.6rem 1.6rem 0; background: linear-gradient(var(--line), var(--line)) 0 0 / 100% 1px no-repeat; }
 .flow-steps li::before { content: counter(s); font-family: var(--serif); font-size: 1.1rem; color: var(--cyan); display: block; margin-bottom: .6rem; }
 .flow-steps h3 { margin-bottom: .6rem; }
-.flow-steps li:not(:first-child) { padding-left: 0; }
 @media (min-width: 48rem) { .flow-steps li:not(:first-child) { padding-left: 1.6rem; border-left: 1px solid var(--line); } }
+html.js .flow-steps li { background-size: 0% 1px; transition: opacity .7s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 80ms), transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 80ms), background-size 1.3s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 110ms + .25s); }
+html.js .flow-steps li.in { background-size: 100% 1px; }
 
 /* ---------- 7. Final ---------- */
 .final { padding: clamp(6rem, 13vw, 10rem) 0 clamp(5rem, 10vw, 8rem); text-align: left; }
-.final .horizon { position: absolute; left: 0; right: 0; bottom: 0; height: 60%; width: 100%; z-index: 0; opacity: .7; pointer-events: none; }
+.final .horizon { position: absolute; left: 0; right: 0; bottom: 0; height: 46%; width: 100%; z-index: 0; opacity: .7; pointer-events: none; }
 .final .wrap { z-index: 2; }
 
 /* ---------- 8. Footer ---------- */
@@ -188,3 +194,49 @@ html.js .reveal.in { opacity: 1; transform: none; }
 }
 
 @media (max-width: 61.99rem) { .eps-svg text { font-size: 34px; } }
+
+/* ---------- Lines that draw themselves as rows scroll into view ---------- */
+.principles li::after, .area-list li::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line); transform-origin: left center;
+}
+html.js .principles li::after, html.js .area-list li::after {
+  transform: scaleX(0); transition: transform 1.3s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 110ms + .25s);
+}
+html.js .principles li.in::after, html.js .area-list li.in::after { transform: scaleX(1); }
+
+/* ---------- Headings that arrive word by word ---------- */
+.split .wi { display: inline-block; }
+html.js .split .wi {
+  opacity: 0; transform: translateY(.55em);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1) calc(var(--wi, 0) * 75ms), transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--wi, 0) * 75ms);
+}
+html.js .split.in .wi { opacity: 1; transform: none; }
+
+/* ---------- Text that lights up word by word as you scroll (set by script) ---------- */
+.scrub .sw { transition: opacity .18s linear; }
+
+/* ---------- Closing waves: revealed left to right on entry, then drifting (script) ---------- */
+html.js .final .horizon { clip-path: inset(0 100% 0 0); }
+html.js .final.in .horizon { clip-path: inset(0 0 0 0); transition: clip-path 2.8s cubic-bezier(.3,.6,.2,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .principles li::after, html.js .area-list li::after { transform: scaleX(1); transition: none; }
+  html.js .flow-steps li { background-size: 100% 1px; transition: none; }
+  html.js .split .wi { opacity: 1; transform: none; transition: none; }
+  html.js .final .horizon { clip-path: none; transition: none; }
+}
+
+/* ---------- Parchment: calm light bands and cards. Re-themes everything inside via variables ---------- */
+.paper {
+  --text: #0A1222; --muted: #3F4A62; --line: rgba(10, 18, 34, .2);
+  --indigo: #4348B8; --cyan: #0A5F86; --violet: #6A3FB0;
+  color: var(--text);
+  background-color: #E9E3D7; background-image: url("paper.svg");
+}
+.paper.deep { background-color: #DAD1BC; }
+section.paper {
+  z-index: 2; /* above the ribbon, so the ribbon passes behind the paper */
+  border-radius: 50% / 3rem;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .45);
+}
+@media (max-width: 47.99rem) { section.paper { border-radius: 50% / 1.6rem; } }
