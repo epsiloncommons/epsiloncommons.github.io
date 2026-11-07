@@ -1,5 +1,13 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "!README.md"
+    - "!PLAN.md"
+    - "!STATUS.md"
+    - "!DECISIONS.md"
+    - "!PROJECT_INSTRUCTIONS.md"
   resources:
     - assets/fonts/*
     - assets/home.js
