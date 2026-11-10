@@ -1,7 +1,266 @@
 ---
-title: "About"
+pagetitle: "About | Epsilon Commons"
+description: "Epsilon Commons is a student-led, open community that studies, discusses and writes mathematics together, and keeps what it learns."
+page-layout: custom
+anchor-sections: false
+css:
+  - assets/home.css
+  - assets/about.css
 ---
 
-Epsilon Commons is an open, student-led mathematics community.
+```{=html}
+<div class="page">
+  <div class="bg-stars" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
 
-This community is independent and not affiliated with Nicolas Bourbaki.
+  <!-- 1. HERO: messages drift upward, as chat does -->
+  <header class="a-hero" aria-labelledby="about-title">
+    <div class="wrap a-hero-grid">
+      <div>
+        <span class="eyebrow">About Epsilon Commons</span>
+        <h1 id="about-title" class="split">Mathematics is a conversation. We keep the minutes.</h1>
+        <p class="lede reveal">A student-led community that reads, argues, explains, gets stuck, gets unstuck, and then <em>writes down what it learned</em>, in public, for anyone to check, use and improve.</p>
+      </div>
+      <div class="drift" aria-hidden="true">
+        <span class="b" style="--x:0%;--delay:0s">Is every Cauchy sequence convergent?</span>
+        <span class="b me" style="--x:42%;--delay:-2.7s">why is d&sup2; = 0?</span>
+        <span class="b" style="--x:4%;--delay:-5.4s">wait, it's irrational..</span>
+        <span class="b me" style="--x:36%;--delay:-8s">so <i>N</i> depends on &epsilon;!</span>
+        <span class="b" style="--x:0%;--delay:-10.7s">a tree on <i>n</i> vertices has <i>n</i> &minus; 1 edges</span>
+        <span class="b me" style="--x:40%;--delay:-13.4s">can we do this in Lean?</span>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </header>
+
+  <!-- 2. STORY: scroll-driven. Chat scrolls away; the good parts are filed into a wiki page -->
+  <section class="scrolly" aria-labelledby="story-title">
+    <div class="scrolly-stage">
+      <div class="wrap story-grid">
+        <div class="story-copy">
+          <h2 id="story-title" class="visually-hidden">How it began</h2>
+          <div class="story-step on" data-step="0">
+            <span class="step-no">1</span>
+            <h3>Chat is where ideas are born.</h3>
+            <p>It began in two WhatsApp groups, <strong>The Modern Bourbaki Group</strong> and <strong>The Epsilon Room</strong>: more than thirty students from several institutes, trading questions and arguments.</p>
+          </div>
+          <div class="story-step" data-step="1">
+            <span class="step-no">2</span>
+            <h3>And then it scrolls away.</h3>
+            <p>The clearest explanation of a lemma sinks under a few hundred messages, and the next person starts from nothing.</p>
+          </div>
+          <div class="story-step" data-step="2">
+            <span class="step-no">3</span>
+            <h3>A commons keeps what matters.</h3>
+            <p>The parts worth keeping are lifted out, written up, reviewed, and filed where anyone can find them.</p>
+          </div>
+        </div>
+        <div class="story-fig" role="img" aria-label="Illustration: a chat in which most messages scroll away while three useful ones are moved onto a reviewed wiki page.">
+          <div class="chat">
+            <div class="chat-head"><i></i><i></i><i></i><span>group chat</span></div>
+            <div class="bubble keep">Is every Cauchy sequence convergent?</div>
+            <div class="bubble me">anyone free at 6?</div>
+            <div class="bubble keep me">In the reals, yes. Here is why&hellip;</div>
+            <div class="bubble">ha, same here</div>
+            <div class="bubble keep">a tree on <i>n</i> vertices has <i>n</i> &minus; 1 edges</div>
+            <div class="bubble me">ok!</div>
+          </div>
+          <div class="pagecard">
+            <div class="page-head"><b>Wiki</b><span>Sequences</span><em class="badge">reviewed &check;</em></div>
+            <div class="slot"></div><div class="slot"></div><div class="slot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PURPOSE: four aims with self-drawing icons -->
+  <section class="purpose" aria-labelledby="purpose-title">
+    <div class="wrap">
+      <h2 id="purpose-title" class="split">What we are for.</h2>
+      <div class="aims">
+        <div class="panel reveal observe" style="--i:1">
+          <svg class="aim-ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"/><path pathLength="1" d="M10 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"/></svg>
+          <h3>Learn together</h3><p>Questions are welcome. &ldquo;I don&rsquo;t follow this step&rdquo; is a perfectly good sentence.</p>
+        </div>
+        <div class="panel reveal observe" style="--i:2">
+          <svg class="aim-ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6 3h9l4 4v14H6z"/><path pathLength="1" d="M9 11h7M9 15h7M9 19h4"/></svg>
+          <h3>Write it down</h3><p>Notes and worked examples, written once, carefully, and kept up to date.</p>
+        </div>
+        <div class="panel reveal observe" style="--i:3">
+          <svg class="aim-ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M12 6c-2.5-1.8-6-2-9-1v13c3-1 6.5-.8 9 1c2.5-1.8 6-2 9-1V5c-3-1-6.5-.8-9 1z"/><path pathLength="1" d="M12 6v13"/></svg>
+          <h3>Keep it open</h3><p>Free to read, with every change and every author on record.</p>
+        </div>
+        <div class="panel reveal observe" style="--i:4">
+          <svg class="aim-ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3 20h8v-6H3z"/><path pathLength="1" d="M11 20h8v-6h-8z"/><path pathLength="1" d="M7 14h8V8H7z"/></svg>
+          <h3>Build to last</h3><p>Wiki pages, LaTeX papers and, in time, proofs checked by a computer in Lean.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE NAME: a network that grows one node at a time -->
+  <section class="name paper" aria-labelledby="name-title">
+    <div class="wrap">
+      <figure class="net observe" role="img" aria-label="Illustration: a network that grows one node at a time, starting from two nodes and ending with twenty-six.">
+        <svg viewBox="20 55 340 300" aria-hidden="true">
+        <line pathLength="1" x1="188.0" y1="216.0" x2="234.0" y2="202.0" style="--d:0.07s"/>
+        <line pathLength="1" x1="234.0" y1="202.0" x2="207.5" y2="175.0" style="--d:0.20s"/>
+        <line pathLength="1" x1="234.0" y1="202.0" x2="270.5" y2="231.0" style="--d:0.33s"/>
+        <line pathLength="1" x1="188.0" y1="216.0" x2="147.4" y2="180.6" style="--d:0.46s"/>
+        <line pathLength="1" x1="207.5" y1="175.0" x2="147.4" y2="180.6" style="--d:0.46s"/>
+        <line pathLength="1" x1="270.5" y1="231.0" x2="277.0" y2="204.6" style="--d:0.59s"/>
+        <line pathLength="1" x1="234.0" y1="202.0" x2="277.0" y2="204.6" style="--d:0.59s"/>
+        <line pathLength="1" x1="270.5" y1="231.0" x2="224.5" y2="294.2" style="--d:0.72s"/>
+        <line pathLength="1" x1="147.4" y1="180.6" x2="145.3" y2="157.7" style="--d:0.85s"/>
+        <line pathLength="1" x1="207.5" y1="175.0" x2="145.3" y2="157.7" style="--d:0.85s"/>
+        <line pathLength="1" x1="270.5" y1="231.0" x2="269.5" y2="274.3" style="--d:0.98s"/>
+        <line pathLength="1" x1="224.5" y1="294.2" x2="269.5" y2="274.3" style="--d:0.98s"/>
+        <line pathLength="1" x1="147.4" y1="180.6" x2="99.7" y2="225.7" style="--d:1.11s"/>
+        <line pathLength="1" x1="207.5" y1="175.0" x2="196.3" y2="119.8" style="--d:1.24s"/>
+        <line pathLength="1" x1="145.3" y1="157.7" x2="196.3" y2="119.8" style="--d:1.24s"/>
+        <line pathLength="1" x1="224.5" y1="294.2" x2="253.9" y2="307.2" style="--d:1.37s"/>
+        <line pathLength="1" x1="269.5" y1="274.3" x2="253.9" y2="307.2" style="--d:1.37s"/>
+        <line pathLength="1" x1="196.3" y1="119.8" x2="156.5" y2="107.0" style="--d:1.50s"/>
+        <line pathLength="1" x1="277.0" y1="204.6" x2="318.2" y2="181.2" style="--d:1.63s"/>
+        <line pathLength="1" x1="270.5" y1="231.0" x2="318.2" y2="181.2" style="--d:1.63s"/>
+        <line pathLength="1" x1="224.5" y1="294.2" x2="206.0" y2="333.5" style="--d:1.76s"/>
+        <line pathLength="1" x1="253.9" y1="307.2" x2="206.0" y2="333.5" style="--d:1.76s"/>
+        <line pathLength="1" x1="196.3" y1="119.8" x2="221.4" y2="88.8" style="--d:1.89s"/>
+        <line pathLength="1" x1="253.9" y1="307.2" x2="253.1" y2="321.1" style="--d:2.02s"/>
+        <line pathLength="1" x1="224.5" y1="294.2" x2="253.1" y2="321.1" style="--d:2.02s"/>
+        <line pathLength="1" x1="99.7" y1="225.7" x2="71.4" y2="262.8" style="--d:2.15s"/>
+        <line pathLength="1" x1="221.4" y1="88.8" x2="257.8" y2="90.0" style="--d:2.28s"/>
+        <line pathLength="1" x1="206.0" y1="333.5" x2="139.0" y2="326.7" style="--d:2.41s"/>
+        <line pathLength="1" x1="224.5" y1="294.2" x2="139.0" y2="326.7" style="--d:2.41s"/>
+        <line pathLength="1" x1="156.5" y1="107.0" x2="150.6" y2="72.3" style="--d:2.54s"/>
+        <line pathLength="1" x1="196.3" y1="119.8" x2="150.6" y2="72.3" style="--d:2.54s"/>
+        <line pathLength="1" x1="318.2" y1="181.2" x2="344.3" y2="156.0" style="--d:2.67s"/>
+        <line pathLength="1" x1="139.0" y1="326.7" x2="94.8" y2="315.8" style="--d:2.80s"/>
+        <line pathLength="1" x1="71.4" y1="262.8" x2="94.8" y2="315.8" style="--d:2.80s"/>
+        <line pathLength="1" x1="344.3" y1="156.0" x2="331.9" y2="103.8" style="--d:2.93s"/>
+        <line pathLength="1" x1="257.8" y1="90.0" x2="331.9" y2="103.8" style="--d:2.93s"/>
+        <line pathLength="1" x1="253.1" y1="321.1" x2="284.6" y2="336.9" style="--d:3.06s"/>
+        <line pathLength="1" x1="71.4" y1="262.8" x2="39.2" y2="256.7" style="--d:3.19s"/>
+        <line pathLength="1" x1="99.7" y1="225.7" x2="39.2" y2="256.7" style="--d:3.19s"/>
+        <circle class="big" cx="188.0" cy="216.0" r="7" style="--d:0.00s"/>
+        <circle class="big" cx="234.0" cy="202.0" r="7" style="--d:0.13s"/>
+        <circle cx="207.5" cy="175.0" r="4.6" style="--d:0.26s"/>
+        <circle cx="270.5" cy="231.0" r="4.6" style="--d:0.39s"/>
+        <circle class="tw" cx="147.4" cy="180.6" r="4.6" style="--d:0.52s"/>
+        <circle cx="277.0" cy="204.6" r="5.6" style="--d:0.65s"/>
+        <circle cx="224.5" cy="294.2" r="4.6" style="--d:0.78s"/>
+        <circle cx="145.3" cy="157.7" r="4.6" style="--d:0.91s"/>
+        <circle class="tw" cx="269.5" cy="274.3" r="4.6" style="--d:1.04s"/>
+        <circle cx="99.7" cy="225.7" r="4.6" style="--d:1.17s"/>
+        <circle cx="196.3" cy="119.8" r="5.6" style="--d:1.30s"/>
+        <circle cx="253.9" cy="307.2" r="4.6" style="--d:1.43s"/>
+        <circle class="tw" cx="156.5" cy="107.0" r="4.6" style="--d:1.56s"/>
+        <circle cx="318.2" cy="181.2" r="4.6" style="--d:1.69s"/>
+        <circle cx="206.0" cy="333.5" r="4.6" style="--d:1.82s"/>
+        <circle cx="221.4" cy="88.8" r="5.6" style="--d:1.95s"/>
+        <circle class="tw" cx="253.1" cy="321.1" r="4.6" style="--d:2.08s"/>
+        <circle cx="71.4" cy="262.8" r="4.6" style="--d:2.21s"/>
+        <circle cx="257.8" cy="90.0" r="4.6" style="--d:2.34s"/>
+        <circle cx="139.0" cy="326.7" r="4.6" style="--d:2.47s"/>
+        <circle class="tw" cx="150.6" cy="72.3" r="5.6" style="--d:2.60s"/>
+        <circle cx="344.3" cy="156.0" r="4.6" style="--d:2.73s"/>
+        <circle cx="94.8" cy="315.8" r="4.6" style="--d:2.86s"/>
+        <circle cx="331.9" cy="103.8" r="4.6" style="--d:2.99s"/>
+        <circle class="tw" cx="284.6" cy="336.9" r="4.6" style="--d:3.12s"/>
+        <circle cx="39.2" cy="256.7" r="5.6" style="--d:3.25s"/>
+        </svg>
+        <figcaption>A commons grows one node at a time.</figcaption>
+      </figure>
+      <div class="prose">
+        <h2 id="name-title" class="split">Why &ldquo;Epsilon Commons&rdquo;?</h2>
+        <p class="reveal">In analysis, <em>&epsilon;</em> is a number you may choose as small as you like, and the game is to show that an answer exists however small you go. We like that: start small, and don&rsquo;t be put off by smallness. One question, one fixed proof, one reviewed paragraph, and in time, a library.</p>
+        <p class="reveal"><strong>Commons</strong> is the old word for land held by everyone and looked after by the people who use it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW A CONTRIBUTION TRAVELS: looping diagram -->
+  <section class="travel" aria-labelledby="travel-title">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 id="travel-title" class="split">How a contribution travels.</h2>
+        <p class="section-intro">Every change takes the same short road.</p>
+      </div>
+      <div class="track" role="list">
+        <div class="rail" aria-hidden="true"><i class="dot"></i></div>
+        <div class="stop s1" role="listitem"><span class="node">1</span><h3>Write</h3><p>Draft a page, a proof or a paper.</p></div>
+        <div class="stop s2" role="listitem"><span class="node">2</span><h3>Review</h3><p>Someone reads it kindly and suggests improvements.</p></div>
+        <div class="stop s3" role="listitem"><span class="node">3</span><h3>Merge</h3><p>Once approved, it joins the record.</p></div>
+        <div class="stop s4" role="listitem"><span class="node">4</span><h3>Publish</h3><p>The site and the PDFs update themselves.</p></div>
+      </div>
+      <ul class="principles habits-list">
+        <li class="reveal" style="--i:1"><h3>Out in the open</h3><p>Public by default.</p></li>
+        <li class="reveal" style="--i:2"><h3>Reviewed, kindly</h3><p>To improve the work, never to shrink the person.</p></li>
+        <li class="reveal" style="--i:3"><h3>Credit, always</h3><p>Every page keeps its authors and its history.</p></li>
+        <li class="reveal" style="--i:4"><h3>Honest about the unfinished</h3><p>Drafts are marked as drafts.</p></li>
+        <li class="reveal" style="--i:5"><h3>Explain, don&rsquo;t assert</h3><p>The idea first, then the proof.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. WHO IT IS FOR: drifting ways to help -->
+  <section class="who" aria-labelledby="who-title">
+    <div class="wrap who-text">
+      <h2 id="who-title" class="split">If you are curious, you belong.</h2>
+      <p class="reveal">Led by students, open to anyone who enjoys mathematics, whether you are meeting your first proof or writing your fifth paper. You only need to care whether something is true, and whether it is clear.</p>
+      <p class="note-small reveal">Small contributions count.</p>
+    </div>
+    <div class="marquee" aria-label="Ways to help">
+      <div class="mq-row">
+        <ul>
+          <li>Ask a good question</li><li>Explain something you just understood</li><li>Fix a typo</li><li>Spot a gap in an argument</li><li>Review a draft</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Ask a good question</li><li>Explain something you just understood</li><li>Fix a typo</li><li>Spot a gap in an argument</li><li>Review a draft</li>
+        </ul>
+      </div>
+      <div class="mq-row rev">
+        <ul>
+          <li>Draw a figure</li><li>Typeset notes in LaTeX</li><li>Suggest a reading</li><li>Translate an explanation</li><li>Formalise a proof in Lean</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Draw a figure</li><li>Typeset notes in LaTeX</li><li>Suggest a reading</li><li>Translate an explanation</li><li>Formalise a proof in Lean</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CLOSING -->
+  <section class="final observe" aria-labelledby="afinal-title">
+    <svg class="horizon" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="hz-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8B91FF"/><stop offset=".5" stop-color="#65C9FF"/><stop offset="1" stop-color="#C4A5FF"/></linearGradient></defs><path pathLength="1" style="--i:0" data-base="170" data-amp="22" data-f="1.1" data-ph="0.4" d="M0 187L8 189L17 192L25 194L33 195L42 197L50 198L58 199L67 200L75 200L83 200L92 200L100 200L108 199L117 198L125 197L133 196L142 194L150 193L158 191L167 190L175 188L183 186L192 184L200 183L208 181L217 180L225 179L233 177L242 176L250 175L258 175L267 174L275 174L283 174L292 174L300 174L308 174L317 174L325 175L333 175L342 176L350 176L358 177L367 177L375 178L383 178L392 178L400 179L408 178L417 178L425 178L433 177L442 176L450 175L458 174L467 173L475 171L483 169L492 167L500 165L508 163L517 160L525 158L533 156L542 153L550 151L558 149L567 146L575 144L583 142L592 140L600 139L608 138L617 137L625 136L633 135L642 135L650 135L658 136L667 136L675 137L683 139L692 140L700 142L708 144L717 146L725 148L733 151L742 154L750 156L758 159L767 162L775 164L783 167L792 170L800 172L808 174L817 177L825 178L833 180L842 182L850 183L858 184L867 185L875 185L883 186L892 186L900 186L908 186L917 185L925 185L933 184L942 184L950 183L958 182L967 181L975 181L983 180L992 179L1000 179" stroke="url(#hz-grad)" stroke-opacity="0.9" fill="none" stroke-width="1" vector-effect="non-scaling-stroke"/><path pathLength="1" style="--i:1" data-base="195" data-amp="26" data-f="1.3" data-ph="1.4" d="M0 231L8 230L17 228L25 225L33 223L42 220L50 218L58 215L67 212L75 209L83 206L92 204L100 202L108 200L117 198L125 197L133 195L142 195L150 194L158 194L167 194L175 194L183 194L192 195L200 196L208 196L217 197L225 197L233 198L242 198L250 198L258 198L267 198L275 197L283 196L292 195L300 193L308 192L317 189L325 187L333 184L342 182L350 179L358 176L367 173L375 170L383 167L392 164L400 162L408 160L417 158L425 157L433 156L442 155L450 155L458 156L467 157L475 158L483 160L492 162L500 165L508 168L517 172L525 175L533 179L542 183L550 187L558 191L567 195L575 199L583 203L592 206L600 209L608 212L617 214L625 216L633 218L642 219L650 220L658 220L667 220L675 220L683 219L692 218L700 217L708 216L717 214L725 213L733 211L742 210L750 209L758 208L767 207L775 206L783 206L792 205L800 205L808 206L817 206L825 207L833 208L842 209L850 210L858 212L867 213L875 215L883 216L892 217L900 218L908 219L917 219L925 219L933 219L942 218L950 217L958 216L967 214L975 212L983 209L992 206L1000 203" stroke="url(#hz-grad)" stroke-opacity="0.7" fill="none" stroke-width="1" vector-effect="non-scaling-stroke"/><path pathLength="1" style="--i:2" data-base="222" data-amp="30" data-f="0.9" data-ph="2.2" d="M0 236L8 234L17 231L25 229L33 227L42 225L50 223L58 222L67 220L75 219L83 218L92 217L100 216L108 215L117 215L125 215L133 215L142 215L150 215L158 215L167 215L175 216L183 216L192 217L200 217L208 218L217 218L225 219L233 219L242 220L250 220L258 220L267 220L275 220L283 220L292 220L300 219L308 218L317 217L325 216L333 215L342 214L350 212L358 211L367 209L375 207L383 205L392 203L400 201L408 199L417 197L425 195L433 193L442 191L450 189L458 187L467 185L475 184L483 183L492 181L500 180L508 180L517 179L525 179L533 179L542 179L550 179L558 180L567 181L575 182L583 184L592 186L600 188L608 190L617 192L625 195L633 198L642 201L650 204L658 207L667 210L675 213L683 217L692 220L700 223L708 226L717 230L725 233L733 236L742 238L750 241L758 244L767 246L775 248L783 250L792 251L800 253L808 254L817 255L825 256L833 256L842 256L850 256L858 256L867 255L875 255L883 254L892 253L900 252L908 251L917 250L925 248L933 247L942 245L950 244L958 243L967 241L975 240L983 239L992 238L1000 236" stroke="url(#hz-grad)" stroke-opacity="0.55" fill="none" stroke-width="1" vector-effect="non-scaling-stroke"/><path pathLength="1" style="--i:3" data-base="250" data-amp="28" data-f="1.5" data-ph="3.1" d="M0 237L8 237L17 237L25 237L33 238L42 239L50 240L58 241L67 242L75 242L83 243L92 243L100 243L108 243L117 242L125 241L133 240L142 238L150 236L158 233L167 231L175 228L183 225L192 223L200 220L208 218L217 216L225 214L233 213L242 213L250 213L258 214L267 216L275 218L283 221L292 224L300 228L308 233L317 237L325 242L333 248L342 253L350 258L358 263L367 268L375 272L383 276L392 279L400 282L408 284L417 286L425 286L433 286L442 286L450 285L458 283L467 282L475 279L483 277L492 274L500 271L508 269L517 266L525 264L533 262L542 260L550 259L558 258L567 257L575 257L583 257L592 258L600 258L608 259L617 260L625 261L633 262L642 263L650 264L658 264L667 264L675 264L683 263L692 261L700 259L708 257L717 254L725 251L733 247L742 243L750 239L758 234L767 230L775 225L783 221L792 217L800 214L808 211L817 209L825 207L833 206L842 205L850 206L858 207L867 208L875 211L883 214L892 217L900 221L908 225L917 230L925 234L933 239L942 243L950 247L958 251L967 255L975 258L983 261L992 263L1000 265" stroke="url(#hz-grad)" stroke-opacity="0.4" fill="none" stroke-width="1" vector-effect="non-scaling-stroke"/><path pathLength="1" style="--i:4" data-base="276" data-amp="22" data-f="1.2" data-ph="4.0" d="M0 266L8 267L17 267L25 268L33 268L42 268L50 268L58 268L67 268L75 267L83 266L92 265L100 264L108 263L117 262L125 260L133 259L142 258L150 256L158 255L167 254L175 253L183 252L192 251L200 251L208 251L217 251L225 251L233 252L242 253L250 254L258 256L267 258L275 260L283 263L292 266L300 268L308 272L317 275L325 278L333 281L342 284L350 288L358 291L367 294L375 296L383 299L392 301L400 303L408 304L417 306L425 307L433 307L442 308L450 307L458 307L467 306L475 305L483 304L492 303L500 301L508 299L517 297L525 295L533 293L542 291L550 289L558 287L567 286L575 284L583 282L592 281L600 280L608 279L617 279L625 278L633 278L642 278L650 278L658 278L667 278L675 279L683 279L692 280L700 280L708 281L717 281L725 282L733 282L742 282L750 282L758 281L767 281L775 280L783 279L792 278L800 276L808 275L817 273L825 270L833 268L842 266L850 263L858 261L867 258L875 256L883 254L892 251L900 249L908 247L917 246L925 244L933 243L942 242L950 242L958 242L967 242L975 242L983 243L992 245L1000 246" stroke="url(#hz-grad)" stroke-opacity="0.28" fill="none" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+    <div class="wrap">
+      <h2 id="afinal-title" class="split">Come and think with us.</h2>
+      <p class="section-intro reveal" style="--i:1">A proper welcome guide is on its way. Until then, the best front door is the project itself: read the wiki, browse the repository, and see how we work.</p>
+      <p class="actions reveal" style="--i:2">
+        <a class="btn-p" href="wiki/index.html">Explore the wiki</a>
+        <a class="btn-s" href="https://github.com/epsiloncommons/epsiloncommons.github.io" rel="noopener">View the project on GitHub</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div>
+        <div class="brand">epsilon commons</div>
+        <p>An open, student-led mathematics community. Independent and not affiliated with Nicolas Bourbaki.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="blog/index.html">Blog</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/epsiloncommons/epsiloncommons.github.io" rel="noopener">GitHub</a>
+      </nav>
+      <p class="legal">Site source on GitHub. Content licence to be announced.</p>
+    </div>
+  </footer>
+</div>
+<script>document.documentElement.classList.add('js');</script>
+<script src="assets/home.js" defer></script>
+<script src="assets/about.js" defer></script>
+```
