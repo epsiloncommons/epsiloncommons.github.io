@@ -11,6 +11,7 @@ project:
   resources:
     - assets/fonts/*
     - assets/home.js
+    - assets/about.js
     - assets/stars.svg
     - assets/paper.svg
 
